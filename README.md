@@ -1,2 +1,0 @@
-# webska
-Web-sovelluskehitys

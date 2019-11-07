@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    <title>Page Title</title>
+  </head>
+  <script>
+    $(document).ready(function() {
+      $("button").addClass("animated bounce"); //Adds animated bounce to the button class
+      $(".well").addClass("animated shake"); //Adds animated shake to the button class
+      $("#target3").addClass("animated fadeOut"); //Fade out target3 button
+      $("button").removeClass("btn-default"); //Removes btn-default class from all buttons
+      $("#target5").clone().appendTo("#left-well"); //Clones target5 button from right-well to the left-well
+      $("#target1").parent().css("background-color", "red"); //Changes background color of the target1 button's parent to red
+      $("#right-well").children().css("color", "orange"); //Changes the children of the right-well button's text to orange
+      $("h1").addClass("animated hinge"); //Adds animated hinge to the h1 element
+    });
+</script>
+<body>
+  <div class="container">
+    <h1 class="text-primary text-center">Mikko's jQuery Playground</h1>
+      <div class="row">
+        <div class="col-xs-6">
+          <h2>left-well</h2>
+            <div class="well" id="left-well">
+              <button class="btn btn-default target" id="target1">#target1</button>
+              <button class="btn btn-default target" id="target2">#target2</button>
+              <button class="btn btn-default target" id="target3">#target3</button>
+            </div>
+        </div>
+        <div class="col-xs-6">
+          <h2>right-well</h2>
+            <div class="well" id="right-well">
+              <button class="btn btn-default target" id="target4">#target4</button>
+              <button class="btn btn-default target" id="target5">#target5</button>
+              <button class="btn btn-default target" id="target6">#target6</button>
+            </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

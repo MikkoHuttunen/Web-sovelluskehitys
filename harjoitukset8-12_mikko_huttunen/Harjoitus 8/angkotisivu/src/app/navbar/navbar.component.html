@@ -1,0 +1,5 @@
+<nav mat-tab-nav-bar>
+    <a mat-tab-link routerLink='/me' routerLinkActive #meTab="routerLinkActive" [active]="meTab.isActive">Minä</a> |
+    <a mat-tab-link routerLink='/studies' routerLinkActive #studiesTab="routerLinkActive" [active]="studiesTab.isActive">Opinnot</a> |
+    <a mat-tab-link routerLink='/hobbies' routerLinkActive #hobbiesTab="routerLinkActive" [active]="hobbiesTab.isActive">Harrastukset</a> 
+</nav>
