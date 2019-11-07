@@ -1,0 +1,48 @@
+﻿<html>
+    <head>
+        <title>index</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="ajax.js" type="text/javascript" language="javascript"></script>
+        <script>
+            $(document).ready(function() {
+                $('#username').blur(function() { //blur tapahtuu kun kursori otetaan tekstikentästä eli focus poistuu
+                    $('#submit').click(function() {
+                        $.ajax({
+                            url: 'adduser.php', //osoite jonne lähetetään
+                            type: 'POST', //lähetysmetodi
+                            data: {
+                                username : $("#username").val(),
+                                password : $("#password").val(),
+                                submit : $("#submit").val()
+                            }, //lähetettävä data
+                            success: function (data) {
+                                textoutput = 'Onnistui!';
+                                $('#textoutput').text(textoutput);
+                            },
+                        });
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+		<h3>Lähetä Tunnus ja Salasana tietokantaan</h3>
+        <form>
+            <table border="0">
+                <tr>
+                    <td>Tunnus:</td>
+                    <!-- Asiakas käynnistyy Ajax-tapahtuman kutsumalla  onBlur -tapahtumankäsittelijää   -->
+                    <td><input type="text" name="username" id="username" value="" size="20" onBlur="startRequest(this.value);"></td>
+                    <!-- id:llä dbdata merkityn elementin sisälle tulee tieto siitä onko tunnus käytettävissä  -->
+                    <td><div id="dbdata"></div></td>
+                </tr>
+                <tr>
+                    <td>Salasana:</td>
+                    <td><input type="password" name="password" id="password" value="" size="20"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p><input type="submit" name="submit" id="submit" value="Lähetä"></p>
+        </form>
+    </body>
+</html>
