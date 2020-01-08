@@ -6,13 +6,13 @@ module.exports = class AvgNumber {
     }
 
     randomNumber() {
-        return Math.floor(min + Math.random() * ((max - min) + 1));
+        return Math.floor(this.min + Math.random() * ((this.max - this.min) + 1));
     }
 
-    calcAverage(array) {
+    calcAverage() {
         let sum = 0;
         for (let i = 0; i < this.array.length; i++) {
-            sum += array[i];
+            sum += this.array[i];
         }
         const avg = sum/this.array.length;
         return avg;
