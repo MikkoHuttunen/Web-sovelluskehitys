@@ -19,4 +19,4 @@ class AvgNumber {
     }
 };
 
-module.exports = new AvgNumber(100, 200);
+module.exports = new AvgNumber(100, 200, [1, 2, 3, 4, 5, 6]);
