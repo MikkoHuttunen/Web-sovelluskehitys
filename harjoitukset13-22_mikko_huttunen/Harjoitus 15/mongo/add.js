@@ -1,5 +1,5 @@
 require('./dbconnection');
-const studentModel = require('./Student');
+const studentModel = require('./models/Student');
 
 let student = new studentModel({
     studentcode: 't6789',

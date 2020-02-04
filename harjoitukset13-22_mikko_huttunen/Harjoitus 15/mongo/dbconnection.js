@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
-const server = 'localhost'; // REPLACE WITH YOUR DB SERVER
-const database = 'MongoDB'; // REPLACE WITH YOUR DB NAME
+const server = 'localhost';
+const database = 'MongoDB';
 
 class Database {
     constructor() {
