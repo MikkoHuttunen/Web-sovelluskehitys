@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <p><a href="/sivu1">sivu1</a> | <a href="/sivu2">sivu2</a> | <a href="/logout">logout</a></p>
+    <h1><%= title %></h1>
+    <p>Session id on <%= sessid %></p>
+    <p>Sessio näyttää tältä: <%= JSON.stringify(sess) %></p>
+    <h2><%= title2 %></h2>
+    <ul>
+        <% students.forEach(function(std) { %>
+            <li><%= std.name %> - <%= std.email %>
+                <ul>
+                    <% std.grades.forEach(function(grd) { %>
+                        <li><%= grd.coursecode %> - <%= grd.grade %></li>
+                    <% }) %>
+                </ul>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
